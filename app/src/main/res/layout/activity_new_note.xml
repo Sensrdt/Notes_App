@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewNoteActivity"
-    android:background="#d9ae04">
+    android:background="#f6eab9">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

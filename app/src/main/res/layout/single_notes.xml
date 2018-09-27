@@ -7,7 +7,7 @@
     android:background="#f9d5d5"
     app:contentPadding="5dp"
    app:cardCornerRadius="20dp"
-    app:cardBackgroundColor="#eaf2a3">
+    app:cardBackgroundColor="#d3bdf6">
 
     <LinearLayout
         android:layout_width="345dp"
@@ -21,18 +21,19 @@
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="Note title"
-            android:textColor="#000"
+            android:textColor="#fa0000"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/descripn"
-            android:layout_width="293dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:text="Description"
             android:textColor="#000"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:gravity="center"/>
 
 
     </LinearLayout>

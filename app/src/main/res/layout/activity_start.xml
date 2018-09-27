@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartActivity"
-    android:background="#d9ae04">
+    android:background="#f6eab9">
+
     <LinearLayout
         android:layout_width="333dp"
-        android:layout_height="206dp"
+        android:layout_height="266dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="14dp"
@@ -29,17 +30,40 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/buttonstyle2"
             android:text="@string/need_a_new_account" />
+
+        <Button
+            android:id="@+id/developer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonstyle"
+            android:text="Developer" />
+
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonstyle2"
+            android:src="@drawable/ic_share_black_24dp"
+            android:id="@+id/share"/>
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/preview" />
     <TextView
         android:id="@+id/textView"
-        android:layout_width="301dp"
+        android:layout_width="369dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="49dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="59dp"
-        android:text="@string/welcome_to_notes_app"
+        android:text="Welcome to Notes"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="36sp" />
