@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.jkd.note.MainActivity;
 import com.example.jkd.note.R;
+import com.example.jkd.note.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
+    private ImageButton backrega;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +42,19 @@ public class RegisterActivity extends AppCompatActivity {
         namew = findViewById(R.id.name);
         emailw = findViewById(R.id.email);
         passw = findViewById(R.id.pass);
+        backrega=findViewById(R.id.backreg);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firedata = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        backrega.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, StartActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         registerb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Processing your request, please wait....");
-
+        progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
 
 

@@ -9,10 +9,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.jkd.note.MainActivity;
 import com.example.jkd.note.R;
+import com.example.jkd.note.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
+    private ImageButton backloga;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
 
         logemail = findViewById(R.id.emaillo) ;
         logpass = findViewById(R.id.passlo);
-        btnlog = findViewById(R.id.login);
+        btnlog = findViewById(R.id.loginup);
+        backloga=findViewById(R.id.backlog);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -49,12 +54,22 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        backloga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, StartActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private  void login(String email , String pass){
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Logging in...");
+        progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email , pass)

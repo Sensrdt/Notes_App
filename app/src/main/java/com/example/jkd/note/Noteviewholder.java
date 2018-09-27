@@ -21,12 +21,15 @@ public class Noteviewholder extends RecyclerView.ViewHolder {
 
     }
 
-    public void settitle(String title){
+    public void settitle(String title)
+    {
 
         textitle.setText(title);
     }
 
-    public void setdescrip(String description){
+    public void setdescrip(String description)
+    {
+
         textdescrip.setText(description);
     }
 }
